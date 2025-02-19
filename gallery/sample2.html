@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Showcase</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="image1.jpeg" class="logo">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#service">Service</a></li>
+                <li><a href="#login" class="login-button">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content">
+        <section class="counter-section">
+            <div class="counter-container">
+                <div class="counter" id="wedding">0+</div>
+                <h2>Weddings</h2>
+            </div>
+            <div class="counter-container">
+                <div class="counter" id="birthday">0+</div>
+                <h2>Big Theme Birthday Parties</h2>
+            </div>
+            <div class="counter-container">
+                <div class="counter" id="engagement">0+</div>
+                <h2>Engagements</h2>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery">
+            <h1>WEDDING AND ENGAGEMENT CLICKS
+            </h1>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="eng7.jpg"  class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="eng9.jpg"  class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="eng10.jpg"  class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="eng8.jpg"  class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="eng4.jpg"  class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="eng5.jpg"  class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="eng11.png"  class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="eng1.jpg"  class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="eng2.jpg"  class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="eng12.png"  class="gallery-image">
+                </div>
+            </div>
+            
+            <h1>BIRTHDAY CLICKS</h1>
+            <div class="gallery-container">
+                <div class="gallery-item"><img src="birth1.jpg"  class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth2.jpg" class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth4.jpg"  class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth5.jpg"  class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth6.jpg"  class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth7.jpg"  class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth8.jpg"  class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth9.jpg"  class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth11.jpg"  class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth21.jpg"  class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth12.jpg"  class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth13.jpg"  class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth14.jpg"  class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth15.jpg"  class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth16.jpg"  class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth17.jpg"  class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth18.jpg"  class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth19.jpg"  class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth20.jpg"  class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth3.jpg"  class="gallery-image"></div>
+            </div>
+        </section>
+    </main>
+
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div id="caption"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Gallery Showcase. All rights reserved.</p>
+    </footer>
+
+   <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f3e8e7;
+            overflow-y: scroll; 
+            height: 100vh;
+        }
+        body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: transparent;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: rgb(111, 182, 93);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 
+                       50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    opacity: 0.8;
+    animation: floatUp 6s linear infinite, twinkle 2s infinite alternate;
+}
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+    }
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.star:nth-child(1) { left: 10%; animation-duration: 5s; }
+star:nth-child(2) { left: 25%; animation-duration: 6s; }
+.star:nth-child(3) { left: 40%; animation-duration: 7s; }
+.star:nth-child(4) { left: 55%; animation-duration: 5.5s; }
+.star:nth-child(5) { left: 70%; animation-duration: 6.5s; }
+.star:nth-child(6) { left: 85%; animation-duration: 7.5s; }
+        header {
+            background-color: #be7846;
+            padding: 10px 0;
+            box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 5px 10px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        .content {
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .counter-section {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin: 40px 0;
+            background-color: black;
+            padding: 50px 0;
+            background-image: url('background1.png'); 
+            background-size: cover;
+            background-position: center;
+        }
+
+        .counter-container {
+            background: rgba(0, 0, 0, 0.7); 
+            border-radius: 10px;
+            padding: 30px;
+            width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .counter {
+            font-size: 60px;
+            font-weight: bold;
+            color: #ffcc00;
+            transition: all 1s ease;
+        }
+
+        h2 {
+            color: white;
+            margin-top: 10px;
+            font-size: 20px;
+            justify-content: center;
+        }
+
+        .counter-container:hover .counter {
+            transform: scale(1.2);
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+        background-color:#6EBAA7;
+        color:#F2F77F;
+        font-weight: bold;
+        padding: 10px;
+        font-size: 28px;
+        border-radius: 10px;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 20px auto;
+        width:90%;
+        height:15vh;
+    }
+    .gallery-container {
+        background-color: #222;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .gallery-item img {
+        border: px solid rgb(225, 225, 179);
+    }
+    .gallery-item img:hover {
+        box-shadow: 0px 5px 15px rgba(255, 255, 0, 0.5);
+    }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            display: block;
+            margin: auto;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #bbb;
+        }
+
+        #caption {
+            color: #ccc;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer {
+            padding: 10px;
+            background-color: #be7846;
+            color: rgb(220, 226, 234);
+            font-size: 14px;
+        }
+    </style>
+
+    <script>
+        function animateCounter(id, endValue) {
+            let startValue = 0;
+            let duration = 2000; 
+            let stepTime = Math.abs(Math.floor(duration / endValue));
+            let element = document.getElementById(id);
+
+            let interval = setInterval(function() {
+                startValue += 1;
+                element.textContent = startValue + "+";
+                
+                if (startValue >= endValue) {
+                    clearInterval(interval);
+                }
+            }, stepTime);
+        }
+
+        window.onload = () => {
+            animateCounter("wedding", 80);
+            animateCounter("birthday", 100);
+            animateCounter("engagement", 150);
+        };
+
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImg");
+        const captionText = document.getElementById("caption");
+        const closeBtn = document.getElementsByClassName("close")[0];
+
+        document.querySelectorAll(".gallery-image").forEach(item => {
+            item.addEventListener("click", function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            });
+        });
+
+        closeBtn.onclick = function () {
+            modal.style.display = "none";
+        };
+
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Showcase</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="image1.jpeg" class="logo">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#service">Service</a></li>
+                <li><a href="#login" class="login-button">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="content">
+        <section id="gallery" class="gallery">
+            <h1>Engagement Pictures</h1>
+            <div class="gallery-container">
+                
+                <div class="gallery-item">
+                    <img src="eng7.jpg" alt="Engagement Image 7" class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="eng9.jpg" alt="Engagement Image 8" class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="eng10.jpg" alt="Engagement Image 9" class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="eng8.jpg" alt="Engagement Image 10" class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="eng4.jpg" alt="Engagement Image 4" class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="eng5.jpg" alt="Engagement Image 5" class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="eng11.png" alt="Engagement Image 6" class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="eng1.jpg" alt="Engagement Image 1" class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="eng2.jpg" alt="Engagement Image 2" class="gallery-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="eng12.jpg" alt="Engagement Image 3" class="gallery-image">
+                </div>
+            </div>
+            
+            <h1>Birthday Pictures</h1>
+            <div class="gallery-container">
+                <div class="gallery-item"><img src="birth1.jpg" alt="Birthday Image 1" class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth2.jpg" alt="Birthday Image 2" class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth4.jpg" alt="Birthday Image 4" class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth5.jpg" alt="Birthday Image 5" class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth6.jpg" alt="Birthday Image 6" class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth7.jpg" alt="Birthday Image 7" class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth8.jpg" alt="Birthday Image 8" class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth9.jpg" alt="Birthday Image 9" class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth11.jpg" alt="Birthday Image 11" class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth21.jpg" alt="Birthday Image 21" class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth12.jpg" alt="Birthday Image 12" class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth13.jpg" alt="Birthday Image 13" class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth14.jpg" alt="Birthday Image 14" class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth15.jpg" alt="Birthday Image 15" class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth16.jpg" alt="Birthday Image 16" class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth17.jpg" alt="Birthday Image 17" class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth18.jpg" alt="Birthday Image 18" class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth19.jpg" alt="Birthday Image 19" class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth20.jpg" alt="Birthday Image 20" class="gallery-image"></div>
+                <div class="gallery-item"><img src="birth3.jpg" alt="Birthday Image 21" class="gallery-image"></div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for enlarged image -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div id="caption"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Gallery Showcase. All rights reserved.</p>
+    </footer>
+
+    <style>
+        /* Styling for body and other sections */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f5f4e4;
+            overflow-y: scroll; /* Ensure entire page is scrollable */
+            height: 100vh; /* Ensures the page takes full height */
+        }
+
+        header {
+            background-color: #be7846;
+            padding: 10px 0;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 5px 10px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        .content {
+            padding: 20px;
+            margin-bottom: 30px; /* Adds space between the gallery and footer */
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            display: block;
+            margin: auto;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #bbb;
+        }
+
+        #caption {
+            color: #ccc;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer {
+            padding: 10px;
+            background-color: #be7846;
+            color: rgb(220, 226, 234);
+            font-size: 14px;
+        }
+    </style>
+
+    <script>
+        // Modal functionality
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImg");
+        const captionText = document.getElementById("caption");
+        const closeBtn = document.getElementsByClassName("close")[0];
+
+        document.querySelectorAll(".gallery-image").forEach(item => {
+            item.addEventListener("click", function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            });
+        });
+
+        closeBtn.onclick = function () {
+            modal.style.display = "none";
+        };
+
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
+</body>
+</html>
